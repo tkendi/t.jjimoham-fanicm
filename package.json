@@ -26,11 +26,13 @@
     "@nestjs/common": "^7.6.15",
     "@nestjs/core": "^7.6.15",
     "@nestjs/graphql": "^10.0.16",
+    "@nestjs/mongoose": "^9.1.1",
     "@nestjs/platform-express": "^7.6.15",
     "apollo-server-express": "^3.9.0",
     "graphql": "^16.5.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
+    "mongoose": "^5.12.11",
     "rxjs": "^6.6.6",
     "ts-morph": "^15.1.0"
   },
