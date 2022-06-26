@@ -1,6 +1,11 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';
 
+import {
+  CreateNotificationInput,
+  Notification,
+} from '@/src/schemas/notification.schema';
+
 @Injectable()
 export class NotificationService {
   constructor(
@@ -10,5 +15,11 @@ export class NotificationService {
 
   async findAll(): Promise<Notification[]> {
     return this.notificationModel.find().exec();
+  }
+
+  async addNotification(
+    notification: CreateNotificationInput,
+  ): Promise<Notification> {
+    return this.notificationModel.create(notification);
   }
 }

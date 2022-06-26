@@ -2,9 +2,9 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { NotificationModule } from './notification/notification.module';
+import { AppController } from '@/src/app.controller';
+import { AppService } from '@/src/app.service';
+import { NotificationModule } from '@/src/notification/notification.module';
 
 @Module({
   imports: [

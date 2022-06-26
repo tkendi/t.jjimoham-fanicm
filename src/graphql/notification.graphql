@@ -12,9 +12,9 @@ input CreateNotificationInput {
 }
 
 type Query {
-  getNotification: [Notification]
+  getAllNotification: [Notification]
 }
 
 type Mutation {
-  addPerson(persNotificationon: CreateNotificationInput): Notification
+  addNotification(notification: CreateNotificationInput): Notification
 }

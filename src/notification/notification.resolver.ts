@@ -1,9 +1,18 @@
-import { Query, Resolver } from '@nestjs/graphql';
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 
-@Resolver('Person')
+import {
+  Notification,
+  CreateNotificationInput,
+} from '@/src/schemas/notification.schema';
+
+import { NotificationService } from '@/src/notification/notification.service';
+
+@Resolver('Notificatoin')
 export class NotificationResolver {
+  constructor(private notificationService: NotificationService) {}
+
   @Query()
-  async getAllPerson() {
+  async getAllNotification() {
     return [
       {
         id: '1',
@@ -13,5 +22,12 @@ export class NotificationResolver {
       },
       { id: '2', name: '변정원', number: '+82 10-8765-4321' },
     ];
+  }
+
+  @Mutation(() => Notification)
+  async addNotification(
+    @Args('notification') notification: CreateNotificationInput,
+  ) {
+    return await this.notificationService.addNotification(notification);
   }
 }

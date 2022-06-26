@@ -10,10 +10,22 @@ export const NotificationSchema = new mongoose.Schema({
 });
 
 @ObjectType()
-export class Person extends Document {
+export class Notification extends Document {
   @Field()
   _id: string;
 
+  @Field()
+  name: string;
+
+  @Field()
+  number: string;
+
+  @Field()
+  email: string;
+}
+
+@ObjectType()
+export class CreateNotificationInput {
   @Field()
   name: string;
 
