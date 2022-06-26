@@ -1,14 +1,16 @@
 type Notification {
   id: String!
-  name: String!
-  number: String
-  email: String
+  endpoint: String
+  expirationTime: String
+  auth: String
+  p256dh: String
 }
 
 input CreateNotificationInput {
-  name: String!
-  number: String
-  email: String
+  endpoint: String
+  expirationTime: String
+  auth: String
+  p256dh: String
 }
 
 type Query {

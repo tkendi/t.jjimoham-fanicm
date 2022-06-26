@@ -1,12 +1,13 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import * as mongoose from 'mongoose';
-import { Document } from 'mongoose';
 
-export const NotificationSchema = new mongoose.Schema({
-  _id: { type: mongoose.Schema.Types.ObjectId, auto: true },
-  name: String,
-  number: String,
-  email: String,
+import { Document, Schema } from 'mongoose';
+
+export const NotificationSchema = new Schema({
+  _id: { type: Schema.Types.ObjectId, auto: true },
+  endpoint: String,
+  expirationTime: String,
+  auth: String,
+  p256dh: String,
 });
 
 @ObjectType()
@@ -15,23 +16,29 @@ export class Notification extends Document {
   _id: string;
 
   @Field()
-  name: string;
+  endpoint: string;
 
   @Field()
-  number: string;
+  expirationTime: string;
 
   @Field()
-  email: string;
+  auth: string;
+
+  @Field()
+  p256dh: string;
 }
 
 @ObjectType()
 export class CreateNotificationInput {
   @Field()
-  name: string;
+  endpoint: string;
 
   @Field()
-  number: string;
+  expirationTime: string;
 
   @Field()
-  email: string;
+  auth: string;
+
+  @Field()
+  p256dh: string;
 }

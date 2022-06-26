@@ -1,5 +1,7 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 
+import * as webPush from "web-push"
+
 import {
   Notification,
   CreateNotificationInput,
@@ -26,7 +28,7 @@ export class NotificationResolver {
 
   @Mutation(() => Notification)
   async registerNotification(
-    @Args('notification') notification: CreateNotificationInput,
+    @Args('notification') notification: webPush.PushSubscription,
   ) {
     return await this.notificationService.registerNotification(notification);
   }
