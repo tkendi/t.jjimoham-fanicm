@@ -25,9 +25,9 @@ export class NotificationResolver {
   }
 
   @Mutation(() => Notification)
-  async addNotification(
+  async registerNotification(
     @Args('notification') notification: CreateNotificationInput,
   ) {
-    return await this.notificationService.addNotification(notification);
+    return await this.notificationService.registerNotification(notification);
   }
 }

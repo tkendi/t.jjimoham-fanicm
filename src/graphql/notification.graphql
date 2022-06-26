@@ -16,5 +16,5 @@ type Query {
 }
 
 type Mutation {
-  addNotification(notification: CreateNotificationInput): Notification
+  registerNotification(notification: CreateNotificationInput): Notification
 }

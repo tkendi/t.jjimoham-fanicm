@@ -17,7 +17,7 @@ export class NotificationService {
     return this.notificationModel.find().exec();
   }
 
-  async addNotification(
+  async registerNotification(
     notification: CreateNotificationInput,
   ): Promise<Notification> {
     return this.notificationModel.create(notification);
