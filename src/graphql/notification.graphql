@@ -1,3 +1,5 @@
+scalar Date
+
 type Notification {
   id: String!
   endpoint: String
@@ -6,7 +8,7 @@ type Notification {
   p256dh: String
 }
 
-input NotificationKeys {
+input CreateNotificationInput {
   auth: String
   p256dh: String
   endpoint: String

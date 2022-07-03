@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { GraphQLModule } from '@nestjs/graphql';
+import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
 import GraphQLJSON from 'graphql-type-json';
 
 import { AppController } from '@/src/app.controller';
@@ -13,7 +14,8 @@ import { CommonModule } from './common/common.module';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       typePaths: ['./**/*.graphql'],
-      resolvers: { JSON: GraphQLJSON },
+      playground: false,
+      plugins: [ApolloServerPluginLandingPageLocalDefault()],
     }),
     NotificationModule,
     CommonModule,

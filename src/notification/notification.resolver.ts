@@ -27,7 +27,6 @@ export class NotificationResolver {
   async registerNotification(
     @Args('notification') notification: webPush.PushSubscription,
   ) {
-    console.log(notification);
     return await this.notificationService.registerNotification(notification);
   }
 }

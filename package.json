@@ -29,6 +29,7 @@
     "@nestjs/mongoose": "^9.1.1",
     "@nestjs/platform-express": "^7.6.15",
     "@nestjs/swagger": "^5.2.1",
+    "apollo-server-core": "^3.9.0",
     "apollo-server-express": "^3.9.0",
     "graphql": "^16.5.0",
     "graphql-scalars": "^1.17.0",
