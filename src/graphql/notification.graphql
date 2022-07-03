@@ -6,11 +6,11 @@ type Notification {
   p256dh: String
 }
 
-input CreateNotificationInput {
-  endpoint: String
-  expirationTime: String
+input NotificationKeys {
   auth: String
   p256dh: String
+  endpoint: String
+  expirationTime: String
 }
 
 type Query {

@@ -1,11 +1,8 @@
-import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { Args, Mutation, Query, Resolver, Scalar } from '@nestjs/graphql';
 
-import * as webPush from "web-push"
+import * as webPush from 'web-push';
 
-import {
-  Notification,
-  CreateNotificationInput,
-} from '@/src/schemas/notification.schema';
+import { Notification } from '@/src/schemas/notification.schema';
 
 import { NotificationService } from '@/src/notification/notification.service';
 
@@ -30,6 +27,7 @@ export class NotificationResolver {
   async registerNotification(
     @Args('notification') notification: webPush.PushSubscription,
   ) {
+    console.log(notification);
     return await this.notificationService.registerNotification(notification);
   }
 }

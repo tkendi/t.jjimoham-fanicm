@@ -31,6 +31,8 @@
     "@nestjs/swagger": "^5.2.1",
     "apollo-server-express": "^3.9.0",
     "graphql": "^16.5.0",
+    "graphql-scalars": "^1.17.0",
+    "graphql-type-json": "^0.3.2",
     "mongoose": "^5.12.11",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
