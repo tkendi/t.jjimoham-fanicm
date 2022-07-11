@@ -5,6 +5,7 @@ import * as webPush from 'web-push';
 import { Notification } from '@/src/schemas/notification.schema';
 
 import { NotificationService } from '@/src/notification/notification.service';
+import { HttpException, HttpStatus } from '@nestjs/common';
 
 @Resolver('Notificatoin')
 export class NotificationResolver {
@@ -27,6 +28,10 @@ export class NotificationResolver {
   async registerNotification(
     @Args('notification') notification: webPush.PushSubscription,
   ) {
-    return await this.notificationService.registerNotification(notification);
+    if (notification) {
+      return await this.notificationService.registerNotification(notification);
+    } else {
+      throw new HttpException('info is empty', HttpStatus.BAD_REQUEST);
+    }
   }
 }
