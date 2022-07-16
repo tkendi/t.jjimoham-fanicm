@@ -4,7 +4,7 @@ import { Controller, Post } from '@nestjs/common';
 import { NotificationService } from '@/src/notification/notification.service';
 
 // schema
-import { Notification } from '@/src/schemas/notification.schema';
+import { GetNotificationInfo } from '@/src/schemas/notification.schema';
 
 // resolver
 import { NotificationResolver } from '@/src/notification/notification.resolver';
@@ -14,7 +14,7 @@ export class NotificationController {
   constructor(private notificationService: NotificationService) {}
 
   @Post()
-  registerNotification(): Notification {
+  registerNotification(): GetNotificationInfo {
     return;
   }
 }

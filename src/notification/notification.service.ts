@@ -3,23 +3,23 @@ import { Model } from 'mongoose';
 
 import {
   CreateNotificationInput,
-  Notification,
+  GetNotificationInfo,
 } from '@/src/schemas/notification.schema';
 
 @Injectable()
 export class NotificationService {
   constructor(
     @Inject('NOTIFICATION_MODEL')
-    private notificationModel: Model<Notification>,
+    private notificationModel: Model<GetNotificationInfo>,
   ) {}
 
-  async findAll(): Promise<Notification[]> {
+  async findAll(): Promise<GetNotificationInfo[]> {
     return this.notificationModel.find().exec();
   }
 
   async registerNotification(
     notification: CreateNotificationInput,
-  ): Promise<Notification> {
+  ): Promise<GetNotificationInfo> {
     return this.notificationModel.create(notification);
   }
 }

@@ -11,7 +11,7 @@ export const NotificationSchema = new Schema({
 });
 
 @ObjectType()
-export class Notification extends Document {
+export class GetNotificationInfo extends Document {
   @Field()
   _id: string;
 
@@ -29,7 +29,7 @@ export class Notification extends Document {
 }
 
 @ObjectType()
-export class CreateNotificationInput {
+export class CreateNotificationInput extends Document {
   @Field()
   endpoint: string;
 
