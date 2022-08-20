@@ -1,11 +1,11 @@
-import { Args, Mutation, Query, Resolver, Scalar } from '@nestjs/graphql';
+import { HttpException, HttpStatus } from '@nestjs/common';
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 
 import * as webPush from 'web-push';
 
 import { GetNotificationInfo } from '@/src/schemas/notification.schema';
 
 import { NotificationService } from '@/src/notification/notification.service';
-import { HttpException, HttpStatus } from '@nestjs/common';
 
 @Resolver('Notificatoin')
 export class NotificationResolver {
