@@ -2,13 +2,16 @@ import { Field, ObjectType } from '@nestjs/graphql';
 
 import { Document, Schema } from 'mongoose';
 
-export const NotificationSchema = new Schema({
-  _id: { type: Schema.Types.ObjectId, auto: true },
-  endpoint: String,
-  expirationTime: String,
-  auth: String,
-  p256dh: String,
-});
+export const NotificationSchema = new Schema(
+  {
+    _id: { type: Schema.Types.ObjectId, auto: true },
+    endpoint: String,
+    expirationTime: String,
+    auth: String,
+    p256dh: String,
+  },
+  { timestamps: true },
+);
 
 @ObjectType()
 export class GetNotificationInfo extends Document {
